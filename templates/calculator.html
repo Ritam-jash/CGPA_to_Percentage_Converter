@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>CGPA to Percentage Converter</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('calculator') }}">Calculator</a></li>
+                <!-- <li><a href="{{ url_for('info') }}">Information</a></li> -->
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Calculate Your Percentage or CGPA</h2>
+        <form action="{{ url_for('calculate') }}" method="POST">
+            <label for="conversion">Select Conversion Type:</label>
+            <select id="conversion" name="conversion" required>
+                <option value="cgpa_to_percentage">CGPA to Percentage</option>
+                <option value="percentage_to_cgpa">Percentage to CGPA</option>
+            </select>
+
+            <label for="value">Enter your value:</label>
+            <input type="number" id="value" name="value" step="0.01" required>
+
+            <label for="scale">Select Grade Scale:</label>
+            <select id="scale" name="scale" required>
+                <option value="10">10-Point Scale</option>
+                <option value="5">5-Point Scale</option>
+            </select>
+            
+            <button type="submit">Convert</button>
+        </form>
+        <div id="result"></div>
+    </main>
+    <footer>
+        <p>&copy; 2024 CGPA Converter</p>
+    </footer>
+</body>
+</html>

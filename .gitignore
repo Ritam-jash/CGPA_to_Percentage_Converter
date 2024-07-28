@@ -1,0 +1,5 @@
+# Ignore Python cache files
+__pycache__/
+
+# Ignore the contact data CSV file
+contact_data.csv

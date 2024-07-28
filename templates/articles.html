@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #2A2B2A;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+
+        /* ADD NEW HOVER SECTION ON HEADER */
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav li {
+            /* margin: 10px 0; */
+            background: #eef36a;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        nav li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        nav li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2em;
+            display: block;
+        }
+
+        /* END NEW STYLE */
+
+        .jump-to-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .jump-to-section li {
+            margin: 10px 0;
+            background: #eef36a;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .jump-to-section li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .jump-to-section li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2em;
+            display: block;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #ff6347;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #2A2B2A;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CGPA to Percentage Converter</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('calculator') }}">Calculator</a></li>
+                <li><a href="{{ url_for('articles') }}">Articles</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Articles</h2>
+        <div class="jump-to-section">
+            <ul>
+                <li><a href="#cgpa-to-percentage">CGPA to Percentage Conversion</a></li>
+                <li><a href="#calculate-points">How to Calculate Points</a></li>
+                <li><a href="#grading-system">Grading System and Conversion Formula</a></li>
+                <li><a href="#why-convert">Why Convert CGPA to Percentage?</a></li>
+                <li><a href="#advantages">Advantages of Using CGPA</a></li>
+                <li><a href="#university-conversion">University Specific CGPA to Percentage Conversion</a></li>
+            </ul>
+        </div>
+
+        <article id="cgpa-to-percentage">
+            <h1>CGPA to Percentage Conversion: A Comprehensive Guide</h1>
+            <h2>Introduction</h2>
+            <p>In educational institutions worldwide, the grading system is a pivotal aspect of student evaluation. One of the commonly used systems is the Cumulative Grade Point Average (CGPA). However, many students and employers often prefer to see academic performance expressed as a percentage. This article aims to clarify how CGPA converts to percentage and why this conversion is essential for students.</p>
+            <h2>Understanding CGPA</h2>
+            <p>CGPA is a standardized way to assess the overall performance of students, typically measured on a scale of 10. Each course contributes to the overall CGPA based on the grade achieved and the number of credits assigned to that course. CGPA provides a cumulative measure of a student's academic performance, making it easier for institutions to assess students collectively.</p>
+            <h2>Why Convert CGPA to Percentage?</h2>
+            <ul>
+                <li><strong>Standardization</strong>: Many educational institutions and employers are more familiar with percentage grades, making it easier for them to evaluate a student’s performance.</li>
+                <li><strong>Comparison</strong>: A percentage format can allow for a more direct comparison between different grading systems and institutions.</li>
+                <li><strong>Scholarship Applications</strong>: Many scholarship applications require percentage grades for eligibility, making conversion necessary.</li>
+            </ul>
+            <h2>Common CGPA to Percentage Conversion Formula</h2>
+            <p>Different institutions may have varying methods for converting CGPA to percentage. However, a widely accepted formula is:</p>
+            <code>Percentage = CGPA × 9.5</code>
+            <h2>Example Calculation</h2>
+            <p>To illustrate this conversion, let's consider the following example:</p>
+            <ul>
+                <li><strong>CGPA</strong>: 7.5</li>
+            </ul>
+            <p>Using the formula:</p>
+            <code>Percentage = 7.5 × 9.5 = 71.25%</code>
+            <p>Thus, a CGPA of 7.5 translates to approximately 71.25%.</p>
+            <h2>Special Cases</h2>
+            <ul>
+                <li><strong>Different Scales</strong>: Some institutions may use a different scale, like a 4-point scale or a 10-point scale. It is important to know the specific guidelines of your institution for accurate conversion.</li>
+                <li><strong>Grading Patterns</strong>: Different universities may have different grading patterns and criteria; therefore, always refer to the specific institution’s guidelines for the most accurate conversion.</li>
+            </ul>
+            <h2>Steps to Convert CGPA to Percentage</h2>
+            <ol>
+                <li><strong>Determine Your CGPA</strong>: Find your cumulative GPA from your academic transcript.</li>
+                <li><strong>Use the Appropriate Formula</strong>: Apply the formula relevant to your institution.</li>
+                <li><strong>Check for Additional Guidelines</strong>: Some institutions might have their unique conversion factors or multipliers, so be sure to check.</li>
+                <li><strong>Use Online Calculators</strong>: Various online CGPA to percentage calculators make conversion straightforward without manual calculations.</li>
+            </ol>
+            <h2>Conclusion</h2>
+            <p>The conversion of CGPA to percentage is a valuable skill for students navigating their educational journeys, whether applying for scholarships, jobs, or further studies. Understanding this conversion can help students articulate their academic achievements in the most widely understood format. Always ensure to verify the specific conversion method accepted by your institution for the most accurate representation of your academic performance.</p>
+            <h2>Additional Resources</h2>
+            <ul>
+                <li><a href="#">Table of CGPA to Percentage Conversion for Various Institutions</a></li>
+                <li><a href="#">Online CGPA to Percentage Calculator</a></li>
+                <li><a href="#">FAQs on CGPA and Percentage Conversion</a></li>
+            </ul>
+            <p>By familiarizing yourself with the CGPA and its percentage equivalent, you can better present your academic qualifications in a format that is understandable and appealing to employers and educational institutions alike. Every point matters, and converting your CGPA into a percentage can make a positive impact in your academic and professional endeavors.</p>
+        </article>
+
+        <article id="calculate-points">  
+            <h1>How to Calculate Points</h1>  
+            <h2>Introduction</h2>  
+            <p>In various fields such as education, sports, and gaming, point systems are commonly used to evaluate performance, track progress, and determine rankings. Understanding how to calculate points accurately is essential for students, athletes, and gamers alike. This article will explore different point systems, how to calculate points, and the importance of these calculations.</p>  
+            <h2>Understanding Point Systems</h2>  
+            <p>Point systems can vary significantly depending on the context. In education, points may be awarded based on grades received in assignments, tests, and participation. In sports, points are often awarded for goals, assists, or other achievements. In gaming, points can be earned through completing levels, defeating opponents, or achieving specific objectives.</p>  
+            <h2>How to Calculate Points</h2>  
+            <ol>  
+                <li><strong>Identify the Criteria</strong>: Determine what actions or achievements will earn points. For example, in a classroom setting, points may be awarded for homework completion, class participation, and test scores.</li>  
+                <li><strong>Assign Point Values</strong>: Assign a specific point value to each criterion. For instance, homework might be worth 10 points, class participation 5 points, and tests 20 points.</li>  
+                <li><strong>Calculate Total Points</strong>: Add up the points earned for each criterion to find the total points. For example, if a student earns 8 points for homework, 4 points for participation, and 15 points on a test, the total would be:  
+                    <br>Total Points = 8 (homework) + 4 (participation) + 15 (test) = 27 points.  
+                </li>  
+                <li><strong>Determine the Percentage (if applicable)</strong>: If you need to convert the total points into a percentage, divide the total points by the maximum possible points and multiply by 100. For example, if the maximum points possible are 50:  
+                    <br>Percentage = (Total Points / Maximum Points) × 100 = (27 / 50) × 100 = 54%.  
+                </li>  
+            </ol>  
+            <h2>Importance of Calculating Points</h2>  
+            <p>Calculating points accurately is crucial for several reasons:</p>  
+            <ul>  
+                <li><strong>Performance Evaluation</strong>: It provides a clear picture of performance, helping individuals understand their strengths and areas for improvement.</li>  
+                <li><strong>Motivation</strong>: Knowing how points are earned can motivate individuals to strive for higher achievements.</li>  
+                <li><strong>Fairness</strong>: A transparent point system ensures fairness in evaluation, whether in academics, sports, or gaming.</li>  
+            </ul>  
+            <h2>Conclusion</h2>  
+            <p>Understanding how to calculate points is essential in various contexts. By identifying criteria, assigning point values, and accurately calculating totals, individuals can effectively track their performance and progress. Whether in education, sports, or gaming, mastering point calculations can lead to better outcomes and enhanced motivation.</p>  
+        </article>  
+
+        <article id="cgpa-to-percentage">  
+            <h1>CGPA to Percentage Conversion</h1>  
+            <h2>Introduction</h2>  
+            <p>In educational institutions worldwide, the grading system is a pivotal aspect of student evaluation. One of the commonly used systems is the Cumulative Grade Point Average (CGPA). However, many students and employers often prefer to see academic performance expressed as a percentage. This article aimsto clarify how CGPA converts to percentage and why this conversion is essential for students.</p>  
+            <h2>Understanding CGPA</h2>  
+            <p>CGPA is a standardized way to assess the overall performance of students, typically measured on a scale of 10. Each course contributes to the overall CGPA based on the grade achieved and the number of credits assigned to that course. CGPA provides a cumulative measure of a student's academic performance, making it easier for institutions to assess students collectively.</p>  
+            <h2>Why Convert CGPA to Percentage?</h2>  
+            <ul>  
+                <li><strong>Standardization</strong>: Many educational institutions and employers are more familiar with percentage grades, making it easier for them to evaluate a student’s performance.</li>  
+                <li><strong>Comparison</strong>: A percentage format can allow for a more direct comparison between different grading systems and institutions.</li>  
+                <li><strong>Scholarship Applications</strong>: Many scholarship applications require percentage grades for eligibility, making conversion necessary.</li>  
+            </ul>  
+            <h2>Common CGPA to Percentage Conversion Formula</h2>  
+            <p>Different institutions may have varying methods for converting CGPA to percentage. However, a widely accepted formula is:</p>  
+            <code>Percentage = CGPA × 9.5</code>  
+            <h2>Example Calculation</h2>  
+            <p>To illustrate this conversion, let's consider the following example:</p>  
+            <ul>  
+                <li><strong>CGPA</strong>: 7.5</li>  
+            </ul>  
+            <p>Using the formula:</p>  
+            <code>Percentage = 7.5 × 9.5 = 71.25%</code>  
+            <p>Thus, a CGPA of 7.5 translates to approximately 71.25%.</p>  
+            <h2>Special Cases</h2>  
+            <ul>  
+                <li><strong>Different Scales</strong>: Some institutions may use a different scale, like a 4-point scale or a 10-point scale. It is important to know the specific guidelines of your institution for accurate conversion.</li>  
+                <li><strong>Grading Patterns</strong>: Different universities may have different grading patterns and criteria; therefore, always refer to the specific institution’s guidelines for the most accurate conversion.</li>  
+            </ul>  
+            <h2>Steps to Convert CGPA to Percentage</h2>  
+            <ol>  
+                <li><strong>Determine Your CGPA</strong>: Find your cumulative GPA from your academic transcript.</li>  
+                <li><strong>Use the Appropriate Formula</strong>: Apply the formula relevant to your institution.</li>  
+                <li><strong>Check for Additional Guidelines</strong>: Some institutions might have their unique conversion factors or multipliers, so be sure to check.</li>  
+                <li><strong>Use Online Calculators</strong>: Various online CGPA to percentage calculators make conversion straightforward without manual calculations.</li>  
+            </ol>  
+            <h2>Conclusion</h2>  
+            <p>The conversion of CGPA to percentage is a valuable skill for students navigating their educational journeys, whether applying for scholarships, jobs, or further studies. Understanding this conversion can help students articulate their academic achievements in the most widely understood format. Always ensure to verify the specific conversion method accepted by your institution for the most accurate representation of your academic performance.</p>  
+            <h2>Additional Resources</h2>  
+            <ul>  
+                <li><a href="#">Table of CGPA to Percentage Conversion for Various Institutions</a></li>  
+                <li><a href="#">Online CGPA to Percentage Calculator</a></li>  
+                <li><a href="#">FAQs on CGPA and Percentage Conversion</a></li>  
+            </ul>  
+            <p>By familiarizing yourself with the CGPA and its percentage equivalent, you can better present your academic qualifications in a format that is understandable and appealing to employers and educational institutions alike. Every point matters, and converting your CGPA into a percentage can make a positive impact in your academic and professional endeavors.</p>  
+        </article>  
+
+        <article id="grading-system">  
+            <h1>Grading System and Conversion Formula</h1>  
+            <h2>Introduction</h2>  
+            <p>The grading system is a fundamental aspect of education that helps evaluate student performance and academic achievement. It provides a standardized way to assess and communicate the level of understanding and mastery of subjects. This article explores the various types of grading systems, their significance, and how they impact students' educational journeys.</p>  
+            <h2>Types of Grading Systems</h2>  
+            <ol>  
+                <li><strong>Letter Grades</strong>: The most common grading system in many educational institutions is the letter grade system, which typically includes grades from A to F. Each letter corresponds to a specific range of percentage scores:  
+                    <ul>  
+                        <li>A: 90-100%</li>  
+                        <li>B: 80-89%</li>  
+                        <li>C: 70-79%</li>  
+                        <li>D: 60-69%</li>  
+                        <li>F: Below 60%</li>  
+                    </ul>  
+                </li>  
+                <li><strong>Grade Point Average (GPA)</strong>: Many institutions use a GPA system, where each letter grade is assigned a numerical value (e.g., A=4, B=3, C=2, D=1, F=0). The GPA is calculated by averaging these values based on the credit hours of each course.</li>  
+                <li><strong>Cumulative Grade Point Average (CGPA)</strong>: Similar to GPA, CGPA takes into account all courses taken over a period, providing a cumulative measure of a student's academic performance.</li>  
+                <li><strong>Pass/Fail</strong>: Some courses may use a pass/fail grading system, where students receive either a "pass" or "fail" based on their performance, without specific letter grades.</li>  
+                <li><strong>Standards-Based Grading</strong>: This system assesses students based on their mastery of specific learning objectives or standards, rather than traditional letter grades.</li>  
+            </ol>  
+            <h2>Importance of the Grading System</h2>  
+            <ul>  
+                <li><strong>Performance Evaluation</strong>: Grading systems provide a clear and objective way to evaluate student performance, helping educators identify areas of strength and weakness.</li>  
+                <li><strong>Motivation</strong>: Grades can motivate students to strive for academic excellence and encourage them to engage more deeply with their studies.</li>  
+                <li><strong>College Admissions</strong>: Grades play a crucial role in college admissions, as they are often a key factor in determining eligibility for scholarships and acceptance into competitive programs.</li>  
+                <li><strong>Feedback for Improvement</strong>: Grades offer valuable feedback to students, helping them understand their progress and areas where they may need additional support or improvement.</li>  
+            </ul>  
+            <h2>Conclusion</h2>  
+            <p>The grading system is an essential component of the educational landscape, providing a framework for evaluating student performance and academic achievement. Understanding the different types of grading systems and their implications can help students navigate their educational journeys more effectively. By recognizing the importance of grades, students can better appreciate their role in shaping their academic and professional futures.</p>  
+        </article>  
+
+        <article id="university-conversion">  
+            <h1>University Specific CGPA to Percentage Conversion</h1>  
+            <h2>Introduction</h2>  
+            <p>University conversion refers to the process of translating academic performance from one grading system to another. This is often necessary for students transferring between institutions or applying to universities abroad. This article aims to clarify the importance of university conversion, the methods involved, and how students can navigate this process effectively.</p>  
+            <h2>Why is University Conversion Important?</h2>  
+            <ol>  
+                <li><strong>Transfer Students</strong>: Students who wish to transfer from one university to another may find that their current institution uses a different grading scale. Understanding how to convert grades ensures that their academic achievements are accurately represented.</li>  
+                <li><strong>International Applications</strong>: Many students aspire to study abroad. Different countries and universities have varying grading systems, making conversion essential for admissions.</li>  
+                <li><strong>Scholarship Opportunities</strong>: Some scholarships require applicants to present their grades in a specific format. Accurate conversion can make students eligible for financial aid.</li>  
+                <li><strong>Job Applications</strong>: Employers often prefer to see grades in a familiar format. Converting grades can help candidates present their qualifications more effectively.</li>  
+            </ol>  
+            <h2>Common Grading Systems</h2>  
+            <p>Different universities may use various grading systems, including:</p>  
+            <ul>  
+                <li><strong>Letter Grades</strong>: Common in the United States, where grades are assigned as A, B, C, D, and F.</li>  
+                <li><strong>Percentage Grades</strong>: Often used in countries like India, where grades are expressed as a percentage of total marks.</li>  
+                <li><strong>Cumulative Grade Point Average (CGPA)</strong>: A standard measure in many institutions, typically on a scale of 4.0 or 10.0.</li>  
+            </ul>  
+            <h2>How to Convert Grades</h2>  
+            <ol>  
+                <li><strong>Identify the Grading Scale</strong>: Determine the grading scale used by your current institution and the one you are applying to.</li>  
+                <li><strong>Use Conversion Formulas</strong>: Many institutions provide specific conversion formulas. For example, a common formula for converting CGPA to percentage is:  
+                    <p><code>Percentage = CGPA × 9.5</code></p>  
+                </li>  
+                <li><strong>Consult University Guidelines</strong>: Always refer to the specific guidelines provided by the university you are applying to for the most accurate conversion.</li>  
+                <li><strong>Seek Assistance</strong>: If you're unsure about the conversion process, consider reaching out to academic advisors or using online conversion tools.</li>  
+            </ol>  
+            <h2>Conclusion</h2>  
+            <p>Understanding university conversion is crucial for students navigating their academic journeys. By familiarizing themselves with different grading systems and conversion methods, students can ensure that their academic achievements are accurately represented, enhancing their opportunities for transfers, scholarships, and employment.</p>  
+        </article>  
+
+        <article id="why-convert">  
+            <h1>Why Convert CGPA to Percentage?</h1>  
+            <p>In the realm of education, the grading system plays a crucial role in evaluating student performance. While the Cumulative Grade Point Average (CGPA) is a widely accepted measure, many students and employers prefer to see academic achievements expressed as a percentage. Here are several reasons why converting CGPA to percentage is essential:</p>  
+            <ol>  
+                <li><strong>Standardization</strong>: Many educational institutions and employers are more familiar with percentage grades. This familiarity makes it easier for them to evaluate a student’s performance and compare it with others.</li>  
+                <li><strong>Comparison</strong>: A percentage format allows for a more direct comparison between different grading systems and institutions. This is particularly important for students applying to universities or jobs that may not be familiar with the CGPA system.</li>  
+                <li><strong>Scholarship Applications</strong>: Numerous scholarship applications require percentage grades for eligibility. Therefore, converting CGPA to percentage becomes necessary for students seeking financial aid for their education.</li>  
+                <li><strong>Clarity</strong>: For many, percentages are more intuitive and easier to understand than CGPA. A percentage can provide a clearer picture of a student's performance, making it easier for others to gauge their academic standing.</li>  
+                <li><strong>International Recognition</strong>: In a globalized education system, many students study abroad or apply to international institutions. A percentage format is often more recognized and accepted worldwide, facilitating smoother transitions for students.</li>  
+                <li><strong>Personal Assessment</strong>: Understanding one's performance in percentage terms can help students set clearer academic goals and benchmarks for improvement. It provides a straightforward way to assess their strengths and weaknesses.</li>  
+            </ol>  
+            <p>In conclusion, converting CGPA to percentage is not just a matter of preference; it is a practical necessity for students navigating their academic and professional journeys. By understanding this conversion, students can better articulate their achievements and enhance their opportunities for scholarships, admissions, and employment.</p>  
+        </article>  
+    </main>
+    <footer>
+        <p>&copy; 2024 CGPA Converter</p>
+    </footer>
+</body>
+</html>
