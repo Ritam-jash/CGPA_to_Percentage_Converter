@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+import os
 import csv
 
 app = Flask(__name__)
@@ -119,5 +120,10 @@ def save_to_csv(name, email, subject, message):
         writer = csv.writer(file)
         writer.writerow([name, email, subject, message])
 
+# if __name__ == '__main__':
+#     app.run(debug=True)
+
+# Some changes
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)
